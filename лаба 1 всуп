@@ -1,0 +1,77 @@
+1) print('Hellow World')
+
+
+
+2)Подвоєння букв в слові 
+s = input()
+s1 = ''
+for i in s:
+    print(2 * i, end='')
+
+
+
+3)Слова навпаки
+string= input("Ведить текст! ")
+string = string.split()
+string.reverse()
+string = " ".join(string)
+t = string [::-1]
+print(t)
+
+
+
+
+4)Калькулятор
+while True:
+    s = input("Знак (+,-,*,/): ")
+    if s == '0':
+        break
+    if s in ('+', '-', '*', '/'):
+        x = float(input("x="))
+        y = float(input("y="))
+        if s == '+':
+            print( (x+y))
+        elif s == '-':
+            print( (x-y))
+        elif s == '*':
+            print((x*y))
+        elif s == '/':
+            if y != 0:
+                print( (x/y))
+            else:
+                print("Ділення на ноль не можливе!")
+    else:
+        print("Неправильний знак!")
+        
+        
+        
+        
+5) Шифр цезаря
+ua = "абвгґдуєжзиіїйклмнопрстуфхцчшщьюяабвгґдеєжзиіїйклмнопрстуфхцчшщьюя"
+UA = ua.upper()
+ENG = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
+eng = ENG.lower()
+num = "12345678901234567890"
+text = input('введіть текст')
+key = int(input('ведіть ключ'))
+textt =''
+o_eng = ord("a")
+o_Eng = ord('A')
+o_ua = ord('a')
+for letter in text:
+    new_num = num.find(letter) + key
+    new_ua = ua.find(letter) + key
+    new_UA = UA.find(letter) + key
+    if letter in ua:
+        textt = textt + ua[new_ua]
+    elif letter in UA:
+        textt = textt + UA[new_UA]
+    elif letter in str(eng):
+        textt += chr((ord(letter) - o_eng + key ) + o_eng )
+    elif letter in str(ENG):
+        textt += chr((ord(letter) - o_Eng + key ) + o_Eng )
+    elif letter in str(num):
+        textt = textt + num[new_num]
+    else:
+        textt = textt +letter
+print (textt)
